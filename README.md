@@ -1,2 +1,4 @@
 # alexen
-Repo for a school project using mysql and PDO 
+Repo made for a school project
+understanding PDO connections with mysql
+
