@@ -6,8 +6,10 @@
 		<title>Alexen</title>
 		<link href="css/style.css" rel="stylesheet">
   		<link rel="icon" type="image/x-icon" href="./img/icon.png"/>
+		<?php include './db/components.php';?>
 	</head>
 	<body>
-	
+		<?php navigation();?>	
+		<?php footer();?>	
 	</body>
 </html>
