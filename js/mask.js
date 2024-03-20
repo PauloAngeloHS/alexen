@@ -1,10 +1,5 @@
-const form = document.querySelector('#form');
+const form = document.querySelector("#form");
 
+function mask() {}
 
-function mask() {
-
-}
-
-function maskForm() {
-
-}
+function maskForm() {}
