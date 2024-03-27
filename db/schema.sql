@@ -1,4 +1,4 @@
-CREATE TABLE cliente(
+CREATE TABLE CLIENTE(
     id integer auto_increment primary key,
     nome varchar(100),
     cpf varchar(20),
@@ -11,7 +11,7 @@ CREATE TABLE cliente(
     data_alteracao timestamp default CURRENT_TIMESTAMP
 );
 
-CREATE TABLE fornecedor(
+CREATE TABLE FORNECEDOR(
     id integer auto_increment primary key,
     nome varchar(100),
     cnpj varchar(20),
@@ -25,7 +25,7 @@ CREATE TABLE fornecedor(
     data_cadastro timestamp default CURRENT_TIMESTAMP,
     data_alteracao timestamp default CURRENT_TIMESTAMP
 );
-CREATE TABLE usuario(
+CREATE TABLE USUARIO(
     id integer auto_increment primary key,
     nome varchar(100),
     email varchar(50),
@@ -49,6 +49,7 @@ CREATE TABLE VENDAS (
        VEN_DATA             DATE,
        VEN_TOTAL            NUMERIC(10,2),
        VEN_OBS              VARCHAR(400),
+       VEN_STATUS           VARCHAR(20),
        CLI_ID               INTEGER NOT NULL,
         FOREIGN KEY (CLI_ID) REFERENCES CLIENTE (id)
 );
@@ -58,6 +59,7 @@ CREATE TABLE VENDAS_PRODUTOS (
        VEN_ID               INTEGER NOT NULL UNIQUE,
        VEP_QTDE             NUMERIC(10,2),
        VEP_VLRUNITARIO      NUMERIC(10,2),
+    PRIMARY KEY (PRO_ID, VEN_ID),
     FOREIGN KEY (VEN_ID) REFERENCES VENDAS (VEN_ID),
     FOREIGN KEY (PRO_ID) REFERENCES PRODUTOS (PRO_ID)
 );
